@@ -2,8 +2,10 @@ package com.kuranc.gwtp.DaniGWTP.client.application.first;
 
 import javax.inject.Inject;
 
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Label;
@@ -26,6 +28,12 @@ class FirstView extends ViewWithUiHandlers<FirstUiHandlers> implements
 	TextBox firstTextBox;
 	@UiField
 	Button firstButton;
+	@UiHandler("firstButton")
+	void onFirstButtonClicked (ClickEvent event){
+		String text = firstTextBox.getText();
+		getUiHandlers().onClicked(text);
+	}
+	
 
 	public Label getFirstLabel() {
 		return firstLabel;

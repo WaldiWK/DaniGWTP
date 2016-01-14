@@ -1,11 +1,6 @@
 package com.kuranc.gwtp.DaniGWTP.client.application.first;
 
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.shared.GwtEvent.Type;
-import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.TextBox;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.Presenter;
@@ -25,12 +20,9 @@ public class FirstPresenter extends
 		FirstUiHandlers {
 	interface MyView extends View, HasUiHandlers<FirstUiHandlers> {
 
-		public Label getFirstLabel();
-
-		public TextBox getFirstTextBox();
-
-		public Button getFirstButton();
 	}
+
+	PlaceManager placeManager;
 
 	@ContentSlot
 	public static final Type<RevealContentHandler<?>> SLOT_First = new Type<RevealContentHandler<?>>();
@@ -41,9 +33,11 @@ public class FirstPresenter extends
 	}
 
 	@Inject
-	FirstPresenter(EventBus eventBus, MyView view, MyProxy proxy) {
+	FirstPresenter(EventBus eventBus, MyView view, MyProxy proxy,
+			PlaceManager placeManager) {
 		super(eventBus, view, proxy, RevealType.Root);
 
+		this.placeManager = placeManager;
 		getView().setUiHandlers(this);
 	}
 
@@ -51,23 +45,17 @@ public class FirstPresenter extends
 		super.onBind();
 	}
 
-	@Inject
-	PlaceManager placeManager;
-
 	protected void onReset() {
 		super.onReset();
+	}
 
-		getView().getFirstTextBox().setText("First text");
-
-		getView().getFirstButton().addClickHandler(new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-				PlaceRequest request = new PlaceRequest(NameTokens.SECOND).with("name", getView().getFirstTextBox().getText());
-				placeManager.revealPlace(request);
-
-			}
-		});
+	@Override
+	public void onClicked(String text) {
+		PlaceRequest request = new PlaceRequest.Builder()
+			.nameToken(NameTokens.SECOND)
+			.with("name", text)
+			.build();
+		placeManager.revealPlace(request);
 
 	}
 }
