@@ -1,16 +1,16 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-             xmlns:g="urn:import:com.google.gwt.user.client.ui">
-    <g:SimplePanel ui:field="main">
-        
-        <g:HTMLPanel>
-            <h2>Dani's GWTP Course</h2>
-            <hr/>
-            <g:Label text="Label with text" ui:field="firstLabel"/>
-            <g:TextBox ui:field="firstTextBox"/>
-            <g:Button text="Click Me" ui:field="firstButton"/>
-        </g:HTMLPanel>
-        
-        
-    </g:SimplePanel>
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+
+	<g:HTMLPanel>
+		<h2>Dani's GWTP Course</h2>
+		<hr />
+		<g:Label text="Label with text" ui:field="firstLabel" />
+		<g:TextBox ui:field="firstTextBox" />
+		<g:Button text="Click Me" ui:field="firstButton" />
+	</g:HTMLPanel>
+
+
+
 </ui:UiBinder>

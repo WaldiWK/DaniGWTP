@@ -24,9 +24,6 @@ public class FirstPresenter extends
 
 	PlaceManager placeManager;
 
-	@ContentSlot
-	public static final Type<RevealContentHandler<?>> SLOT_First = new Type<RevealContentHandler<?>>();
-
 	@NameToken(NameTokens.FIRST)
 	@ProxyCodeSplit
 	interface MyProxy extends ProxyPlace<FirstPresenter> {

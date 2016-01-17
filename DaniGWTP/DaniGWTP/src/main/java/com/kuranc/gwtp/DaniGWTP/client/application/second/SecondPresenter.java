@@ -17,9 +17,7 @@ public class SecondPresenter extends Presenter<SecondPresenter.MyView, SecondPre
     interface MyView extends View  {
     	public Label getSecondLabel() ;
     }
-    @ContentSlot
-    public static final Type<RevealContentHandler<?>> SLOT_Second = new Type<RevealContentHandler<?>>();
-
+   
     @NameToken(NameTokens.SECOND)
     @ProxyCodeSplit
     interface MyProxy extends ProxyPlace<SecondPresenter> {

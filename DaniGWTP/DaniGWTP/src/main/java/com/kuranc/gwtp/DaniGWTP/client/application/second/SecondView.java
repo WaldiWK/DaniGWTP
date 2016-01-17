@@ -15,8 +15,6 @@ class SecondView extends ViewImpl implements SecondPresenter.MyView {
 	}
 
 	@UiField
-	SimplePanel main;
-	@UiField
 	Label secondLabel;
 
 	public Label getSecondLabel() {
@@ -28,12 +26,4 @@ class SecondView extends ViewImpl implements SecondPresenter.MyView {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
 
-	@Override
-	public void setInSlot(Object slot, IsWidget content) {
-		if (slot == SecondPresenter.SLOT_Second) {
-			main.setWidget(content);
-		} else {
-			super.setInSlot(slot, content);
-		}
-	}
 }

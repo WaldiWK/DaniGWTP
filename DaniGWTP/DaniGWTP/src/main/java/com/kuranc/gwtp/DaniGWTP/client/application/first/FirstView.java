@@ -20,9 +20,6 @@ class FirstView extends ViewWithUiHandlers<FirstUiHandlers> implements
 	}
 
 	@UiField
-	SimplePanel main;
-
-	@UiField
 	Label firstLabel;
 	@UiField
 	TextBox firstTextBox;
@@ -52,12 +49,4 @@ class FirstView extends ViewWithUiHandlers<FirstUiHandlers> implements
 		initWidget(uiBinder.createAndBindUi(this));
 	}
 
-	@Override
-	public void setInSlot(Object slot, IsWidget content) {
-		if (slot == FirstPresenter.SLOT_First) {
-			main.setWidget(content);
-		} else {
-			super.setInSlot(slot, content);
-		}
-	}
 }
