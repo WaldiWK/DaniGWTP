@@ -7,9 +7,8 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.IsWidget;
+import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
@@ -21,16 +20,21 @@ class FirstView extends ViewWithUiHandlers<FirstUiHandlers> implements
 
 	@UiField
 	Label firstLabel;
+
 	@UiField
 	TextBox firstTextBox;
+
 	@UiField
 	Button firstButton;
+
+	@UiField
+	HTMLPanel ratePanel;
+
 	@UiHandler("firstButton")
-	void onFirstButtonClicked (ClickEvent event){
+	void onFirstButtonClicked(ClickEvent event) {
 		String text = firstTextBox.getText();
 		getUiHandlers().onClicked(text);
 	}
-	
 
 	public Label getFirstLabel() {
 		return firstLabel;
@@ -47,6 +51,7 @@ class FirstView extends ViewWithUiHandlers<FirstUiHandlers> implements
 	@Inject
 	FirstView(Binder uiBinder) {
 		initWidget(uiBinder.createAndBindUi(this));
+		bindSlot(FirstPresenter.SLOT_RATE,ratePanel);
 	}
 
 }

@@ -2,8 +2,8 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui">
 	<g:HTMLPanel>
-		<g:Hyperlink text="Back to first" targetHistoryToken="FIRST" />
-		<g:Label ui:field="secondLabel" />
-		<g:HTMLPanel ui:field="listPanel" />
+		Did you like this page?
+		<g:Button ui:field="yesButton" text="Yes" />
+		<g:Button ui:field="noButton" text="No" />
 	</g:HTMLPanel>
 </ui:UiBinder>
