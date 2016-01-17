@@ -5,11 +5,13 @@ import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.kuranc.gwtp.DaniGWTP.client.application.first.FirstModule;
 import com.kuranc.gwtp.DaniGWTP.client.application.second.SecondModule;
 import com.kuranc.gwtp.DaniGWTP.client.application.header.HeaderModule;
+import com.kuranc.gwtp.DaniGWTP.client.application.third.ThirdModule;
 
 public class ApplicationModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
-        install(new HeaderModule());
+        install(new ThirdModule());
+		install(new HeaderModule());
 		install(new SecondModule());
 		install(new FirstModule());
 		install(new HomeModule());
