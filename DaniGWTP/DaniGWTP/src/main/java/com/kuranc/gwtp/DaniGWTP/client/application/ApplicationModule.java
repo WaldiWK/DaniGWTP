@@ -7,11 +7,13 @@ import com.kuranc.gwtp.DaniGWTP.client.application.second.SecondModule;
 import com.kuranc.gwtp.DaniGWTP.client.application.header.HeaderModule;
 import com.kuranc.gwtp.DaniGWTP.client.application.third.ThirdModule;
 import com.kuranc.gwtp.DaniGWTP.client.application.ratepage.RatePageModule;
+import com.kuranc.gwtp.DaniGWTP.client.application.whynot.WhyNotModule;
 
 public class ApplicationModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
-        install(new RatePageModule());
+        install(new WhyNotModule());
+		install(new RatePageModule());
 		install(new ThirdModule());
 		install(new HeaderModule());
 		install(new SecondModule());
