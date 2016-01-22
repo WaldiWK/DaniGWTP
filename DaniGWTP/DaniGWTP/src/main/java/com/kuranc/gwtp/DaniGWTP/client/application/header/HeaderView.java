@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.HTMLPanel;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
 
@@ -15,6 +16,11 @@ class HeaderView extends ViewImpl implements HeaderPresenter.MyView {
 
 	@UiField
 	HTMLPanel contentPanel;
+	
+	@UiField
+	Label happyLabel;
+
+	
 
 	@Inject
 	HeaderView(Binder uiBinder) {
@@ -22,4 +28,9 @@ class HeaderView extends ViewImpl implements HeaderPresenter.MyView {
 		bindSlot(HeaderPresenter.SLOT_content, contentPanel);
 	}
 
+	public Label getHappyLabel() {
+		return happyLabel;
+	}
+	
+	
 }

@@ -3,6 +3,7 @@
 	xmlns:g="urn:import:com.google.gwt.user.client.ui">
 	<g:HTMLPanel>
 		<h1> HEADER for Dani's GWTP Course</h1>
+		<g:Label ui:field="happyLabel" text="Welcome happy user!" />
 		<hr />
 		<g:HTMLPanel ui:field="contentPanel" />
 
